@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "simple-calculator": {
+      "command": "node",
+      "args": ["/Users/sanrosang/Documents/mcp/dist/index.js"],
+      "env": {}
+    }
+  }
+}
