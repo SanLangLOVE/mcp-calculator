@@ -1,0 +1,119 @@
+{
+  "name": "mcp-calculator",
+  "version": "1.0.0",
+  "description": "一个简单的计算器MCP工具，提供基本的数学运算功能",
+  "author": "sanrozhang",
+  "license": "MIT",
+  "runtime": "node",
+  "entry": "dist/index.js",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "startCommand": "node dist/index.js",
+  "workingDirectory": "/",
+  "environment": {
+    "NODE_ENV": "production"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0"
+  },
+  "tools": [
+    {
+      "name": "add",
+      "description": "计算两个数字的和",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "第一个数字"
+          },
+          "b": {
+            "type": "number",
+            "description": "第二个数字"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "subtract",
+      "description": "计算两个数字的差",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "被减数"
+          },
+          "b": {
+            "type": "number",
+            "description": "减数"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "multiply",
+      "description": "计算两个数字的乘积",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "第一个数字"
+          },
+          "b": {
+            "type": "number",
+            "description": "第二个数字"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "divide",
+      "description": "计算两个数字的商",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "被除数"
+          },
+          "b": {
+            "type": "number",
+            "description": "除数"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "power",
+      "description": "计算一个数字的幂",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "base": {
+            "type": "number",
+            "description": "底数"
+          },
+          "exponent": {
+            "type": "number",
+            "description": "指数"
+          }
+        },
+        "required": ["base", "exponent"]
+      }
+    }
+  ],
+  "healthCheck": {
+    "endpoint": "/health",
+    "method": "GET"
+  },
+  "logging": {
+    "level": "info",
+    "format": "json"
+  }
+}

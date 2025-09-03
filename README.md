@@ -220,13 +220,23 @@ MIT License
 - **入口文件**: `dist/index.js`
 - **依赖管理**: npm
 - **构建命令**: `npm run build`
-- **启动命令**: `npm start`
+- **启动命令**: `node dist/index.js`
 
 ### 部署要求
 
 1. 确保项目已构建（`npm run build`）
 2. 确保所有依赖已安装（`npm install`）
 3. 确保`dist/index.js`文件存在且可执行
+
+### ModelScope平台配置
+
+在ModelScope平台的设置页面中，使用以下配置：
+
+**服务名称**: `mcp-calculator`
+**服务描述**: `一个简单的计算器MCP工具，提供基本的数学运算功能`
+**运行环境**: `Node.js`
+**启动命令**: `node dist/index.js`
+**工作目录**: `/`
 
 ### 工具列表
 
@@ -239,3 +249,15 @@ MIT License
 5. **power** - 幂运算
 
 所有工具都支持数字类型参数，并提供完整的错误处理机制。
+
+### 环境变量
+
+```json
+{
+  "NODE_ENV": "production"
+}
+```
+
+### 健康检查
+
+服务支持MCP协议标准健康检查，确保服务正常运行。
