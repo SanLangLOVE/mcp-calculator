@@ -2,6 +2,115 @@
 
 这是一个简单的计算器MCP（Model Context Protocol）工具，提供基本的数学运算功能。
 
+<!-- MCP_SERVER_CONFIG_START -->
+```json
+{
+  "name": "simple-calculator-mcp",
+  "version": "1.0.0",
+  "description": "一个简单的计算器MCP工具，提供基本的数学运算功能",
+  "author": "SanLangLOVE",
+  "license": "MIT",
+  "runtime": "node",
+  "entry": "dist/index.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0"
+  },
+  "tools": [
+    {
+      "name": "add",
+      "description": "计算两个数字的和",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "第一个数字"
+          },
+          "b": {
+            "type": "number",
+            "description": "第二个数字"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "subtract",
+      "description": "计算两个数字的差",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "被减数"
+          },
+          "b": {
+            "type": "number",
+            "description": "减数"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "multiply",
+      "description": "计算两个数字的乘积",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "第一个数字"
+          },
+          "b": {
+            "type": "number",
+            "description": "第二个数字"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "divide",
+      "description": "计算两个数字的商",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "被除数"
+          },
+          "b": {
+            "type": "number",
+            "description": "除数"
+          }
+        },
+        "required": ["a", "b"]
+      }
+    },
+    {
+      "name": "power",
+      "description": "计算一个数字的幂",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "base": {
+            "type": "number",
+            "description": "底数"
+          },
+          "exponent": {
+            "type": "number",
+            "description": "指数"
+          }
+        },
+        "required": ["base", "exponent"]
+      }
+    }
+  ]
+}
+```
+<!-- MCP_SERVER_CONFIG_END -->
+
 ## 功能特性
 
 - 加法运算
@@ -101,4 +210,32 @@ npm run dev
 
 ## 许可证
 
-MIT License# mcp-calculator
+MIT License
+
+## ModelScope 部署
+
+本项目已配置为支持ModelScope平台部署。主要配置信息：
+
+- **运行时**: Node.js
+- **入口文件**: `dist/index.js`
+- **依赖管理**: npm
+- **构建命令**: `npm run build`
+- **启动命令**: `npm start`
+
+### 部署要求
+
+1. 确保项目已构建（`npm run build`）
+2. 确保所有依赖已安装（`npm install`）
+3. 确保`dist/index.js`文件存在且可执行
+
+### 工具列表
+
+本MCP服务器提供以下工具：
+
+1. **add** - 加法运算
+2. **subtract** - 减法运算  
+3. **multiply** - 乘法运算
+4. **divide** - 除法运算
+5. **power** - 幂运算
+
+所有工具都支持数字类型参数，并提供完整的错误处理机制。
